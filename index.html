@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Monthsary and Birthday (exclamation point) </title>
+    
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+    <section>
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+        
+        <!--Music-->
+        <audio id="background-music" src="BG Music.mp3" loop></audio>
+
+        <!-- Volume Control -->
+        <div id="volume-control" class="volume-control">
+            <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="1">
+            <span id="volume-icon">🔊</span>
+        </div>
+
+
+        <div id="home" class="section">
+            <h1>Hi</h1>
+            <p>Click ka anywhere sa page tapos scroll down. Mwa Mwa</p>
+        </div>
+
+        <div id="our-journey" class="section">
+            <h2>Memories (i.e. pictures)</h2>
+            <p>Um di siya madami since pinili ko lang yung pics na magugustuhan mo utas <br> pero lagi madami yung love ko sayo (❤️´艸｀❤️) </p>
+            <div class="slider">
+                <div class="slide-track">
+                    <div class="slide"><img src="/img/First Birthday.jpg"></div>
+                    <div class="slide"><img src="/img/Second Birthday.jpg"></div>
+                    <div class="slide"><img src="/img/Third Birthday.jpg"></div>
+                    <div class="slide"><img src="/img/Fourth.jpg"></div>
+                    <div class="slide"><img src="/img/Fifth.jpg"></div>
+                    <div class="slide"><img src="/img/Sixth.jpg"></div>
+                    <div class="slide"><img src="/img/Seventh.jpg"></div>
+                    <div class="slide"><img src="/img/Eigth.jpg"></div>
+                    <!-- Same pics -->
+                    <div class="slide"><img src="/img/First Birthday.jpg"></div>
+                    <div class="slide"><img src="/img/Second Birthday.jpg"></div>
+                    <div class="slide"><img src="/img/Third Birthday.jpg"></div>
+                    <div class="slide"><img src="/img/Fourth.jpg"></div>
+                    <div class="slide"><img src="/img/Fifth.jpg"></div>
+                    <div class="slide"><img src="/img/Sixth.jpg"></div>
+                    <div class="slide"><img src="/img/Seventh.jpg"></div>
+                    <div class="slide"><img src="/img/Eigth.jpg"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="why-i-love-you" class="section">
+            <h2>Why I Love You</h2>
+            <p>Click each</p>
+            <ul>
+                <li id="kindness" data-story="I love how kind you are despite what you say about yourself. You're one of the people I know that will do anything for anyone and I admire that about you.">Your kindness</li>
+                <li id="smile" data-story="Your smile is to die for kaya I always stare at you while you play with others. (*/ω＼*)">Your smile</li>
+                <li id="humor" data-story="Your sense of humor is something else. You always know how to make me laugh and I love that about you. Kahit cheese lang sabihin mo eh tatawa na agad ako I dont know why. ○( ＾皿＾)っ Hehehe…">Your sense of humor</li>
+                <li id="intelligence" data-story="I love your brain. Kahit na dina-downplay mo yung intelligence mo, I know you're smart. Di mo lang makita. You're intelligent no matter the scenario, street smart, emotional, academics. Lahat na （￣︶￣）↗　">Your intelligence</li>
+            </ul>
+        </div>
+
+        <div id="messages-from-the-stars" class="section">
+            <h2>My Message</h2>
+            <p>First of all, Happy Happyy Birthdayyyyyyy. 20 ka na (exclamation point). Hehe and of course, Happyy Happyyy Monthsaryy babyyyy. 
+                I hope you enjoy your day and eat lots because you need more. I just want to say thank you for everything you've done for us and 
+                I'm sorry for my recent behaviors. I will do my best to choose my words more carefully so that I won't hurt you. The things I said 
+                above are true so don't even...I love your smile, your kind heart, your intelligent brain, your sense of humor. I love everything and 
+                anything concerning you. Your voice, your hair, your smell  (´▽`ʃ♡ƪ), your HEIGHT, your hands, your ears, your laugh, and more. I can't 
+                put it here na since di matatapos yung letter kase walang hanggan yung gusto ko sayo. 
+            </p>
+            <p>Again, I love you very much. I adore you. I admire you. I admire how you want to be a better person, when I know its challenging. I cherish
+                how easy I can be when I'm with you. Most of all, I treasure your patience with me. Please keep being the person you are and don't let others
+                get you down. Lagi ako nandito for you. Don't hesitate to tell me about your day, small or big, kase I want to listen to you. I love how
+                you get excited about things. I'll support you in anything you want to do in life. I love you so much. Happy Birthday and Happy Monthsary my baby 
+            </p>
+            <p>(❤️´艸｀❤️)(○｀ 3′○)(○｀ 3′○)(❤️ ω ❤️)(❤️ ω ❤️)(´▽`ʃ♡ƪ)</p>
+        </div>
+
+        <div id="universe-of-us" class="section">
+            <h2>Sorry, I got no moola right now so...huhu</h2>
+            <p>Click stars</p>
+            <div class="constellation-map">
+                <div class="star" data-memory="peep" style="top: 70%; left: 20%;"></div>
+                <div class="star" data-memory="poo" style="top: 70%; left: 50%;"></div>
+                <div class="star" data-memory="meep" style="top: 70%; left: 80%;"></div>
+                <!-- Add more stars as needed with fixed positions and memories -->
+            </div>
+
+            <div id="memory-popup" class="memory-popup">
+                <span class="close-btn">&times;</span>
+                <p id="memory-text"></p>
+            </div>
+        </div>
+
+        <div id="story-popup" class="story-popup">
+            <span class="close-btn">&times;</span>
+            <p id="story-text"></p>
+        </div>
+
+
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            // Scroll to the home section when the page is loaded or reloaded
+            const homeSection = document.getElementById('home');
+            if (homeSection) {
+                homeSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('background-music');
+            const volumeSlider = document.getElementById('volume-slider');
+            const volumeIcon = document.getElementById('volume-icon');
+
+            // Set initial volume
+            audio.volume = volumeSlider.value;
+
+            // Update audio volume when slider changes
+            volumeSlider.addEventListener('input', () => {
+                audio.volume = volumeSlider.value;
+                // Change icon based on volume
+                if (audio.volume === 0) {
+                    volumeIcon.textContent = '🔇'; // Mute icon
+                } else if (audio.volume <= 0.5) {
+                    volumeIcon.textContent = '🔉'; // Low volume icon
+                } else {
+                    volumeIcon.textContent = '🔊'; // High volume icon
+                }
+            });
+
+            // Play music after user interaction
+            document.body.addEventListener('click', () => {
+                audio.play().catch(error => {
+                    console.error('Playback failed:', error);
+                });
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            // Function to play music
+            function playMusic() {
+                const audio = document.getElementById('background-music');
+                audio.play().catch(error => {
+                    console.error('Playback failed:', error);
+                });
+            }
+
+            // Play music after user interaction (e.g., click anywhere on the page)
+            document.body.addEventListener('click', playMusic, { once: true });
+        });
+
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            // Function to show memory popup
+            function showMemory(memory) {
+                const memoryPopup = document.getElementById('memory-popup');
+                const memoryText = document.getElementById('memory-text');
+                memoryText.textContent = memory;
+                memoryPopup.style.display = 'block';
+            }
+
+            // Add event listeners to stars
+            document.querySelectorAll('.star').forEach(star => {
+                star.addEventListener('click', () => {
+                    const memory = star.getAttribute('data-memory');
+                    showMemory(memory);
+                    star.classList.add('animated'); // Add animation class
+                    setTimeout(() => {
+                        star.classList.remove('animated'); // Remove animation class after delay
+                    }, 1000);
+                });
+            });
+
+            // Close memory popup
+            document.querySelector('.memory-popup .close-btn').addEventListener('click', () => {
+                document.getElementById('memory-popup').style.display = 'none';
+            });
+
+            // Function to show story popup
+            function showStory(story) {
+                const storyPopup = document.getElementById('story-popup');
+                const storyText = document.getElementById('story-text');
+                storyText.textContent = story;
+                storyPopup.style.display = 'block';
+            }
+
+            // Add event listeners to list items
+            document.querySelectorAll('#why-i-love-you ul li').forEach(item => {
+                item.addEventListener('click', () => {
+                    const story = item.getAttribute('data-story');
+                    showStory(story);
+                });
+            });
+
+            // Close story popup
+            document.querySelector('.story-popup .close-btn').addEventListener('click', () => {
+                document.getElementById('story-popup').style.display = 'none';
+            });
+        });
+
+    </script>
+</body>
+</html>
